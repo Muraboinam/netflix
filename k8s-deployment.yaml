@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app
+          image: maheshmu/nexflix:latest  # Change to your actual image
+          ports:
+            - containerPort: 8085  # This should match the port your Docker container exposes
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  type: LoadBalancer  # Change to NodePort if LoadBalancer is unavailable
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 8086        # External port (Kubernetes Service port)
+      targetPort: 8085  # Internal port (Your Docker container's exposed port)
