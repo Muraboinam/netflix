@@ -23,21 +23,20 @@ module "eks" {
 
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
-    ami_type = "CUSTOM" 
-    ami_type       = "ami-00b2b099cdd31358c"
+    ami_type = "CUSTOM"  # Use "CUSTOM" for custom AMI
     instance_types = ["t4g.large"]
-
     attach_cluster_primary_security_group = true
   }
 
   eks_managed_node_groups = {
-    nexflix-cluster= {
+    nexflix-cluster = {
       min_size     = 1
       max_size     = 2
       desired_size = 1
 
       instance_types = ["t3.medium"]
       capacity_type  = "SPOT"
+      ami_id         = "ami-00b2b099cdd31358c"  # Specify the custom AMI ID here
 
       tags = {
         ExtraTag = "nexflix"
