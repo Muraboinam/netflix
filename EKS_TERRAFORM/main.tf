@@ -23,6 +23,7 @@ module "eks" {
 
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
+    ami_type = "CUSTOM" 
     ami_type       = "ami-00b2b099cdd31358c"
     instance_types = ["t4g.large"]
 
