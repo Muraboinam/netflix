@@ -10,8 +10,8 @@ locals {
   azs      = ["ap-south-2a", "ap-south-2b"]
 
   public_subnets  = ["10.123.1.0/24", "10.123.2.0/24"]
-  private_subnets = ["10.123.3.0/24", "10.123.7.0/24"]
-  intra_subnets   = ["10.123.8.0/24", "10.123.9.0/24"]
+  private_subnets = ["10.123.11.0/24", "10.123.12.0/24"]
+  intra_subnets   = ["10.123.15.0/24", "10.123.16.0/24"]
 
   tags = {
     Example = local.name
