@@ -4,7 +4,7 @@ provider "aws" {
 
 locals {
   name   = "nexflix-cluster"
-  region = "ap-south-2a"
+  region = "ap-south-2"
 
   vpc_cidr = "10.123.0.0/16"
   azs      = ["ap-south-2a"]
