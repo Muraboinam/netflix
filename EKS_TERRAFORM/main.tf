@@ -1,5 +1,5 @@
 locals {
-  name   = "ascode-cluster"
+  name   = "nexflix"
   region = "ap-south-1"
 
   vpc_cidr = "10.123.0.0/16"
@@ -68,10 +68,10 @@ module "eks" {
 
       instance_types = ["t4g.large"]
       capacity_type  = "SPOT"
-      ami_id         = "ami-00b2b099cdd31358c"
+      ami_id         = "ami-09773b29dffbef1f2"
 
       tags = {
-        ExtraTag = "helloworld"
+        ExtraTag = "nex"
       }
     }
   }
