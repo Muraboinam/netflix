@@ -17,7 +17,7 @@ resource "aws_iam_role" "example" {
 }
 
 resource "aws_iam_role_policy_attachment" "example-AmazonEKSClusterPolicy" {
-  policy_arn = "arn:aws:iam::565393072883:role/EKS_clu"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
   role       = aws_iam_role.example.name
 }
 
